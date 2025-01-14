@@ -10,6 +10,12 @@ language = "python3"
 [gitHubImport]
 requiredFiles = [".replit", "replit.nix"]
 
+# The 'run' config below is used by the "Run" button in Replit.
 [deployment]
-run = ["python3", "main.py"]
+run = "uvicorn main:app --host=0.0.0.0 --port=8000"
+
 deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 8000
+externalPort = 80
